@@ -18,3 +18,12 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
+  run-shell-on-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Get Directory
+        run: Get-Location
+      - name: Directory Bash
+        run: pwd && echo $(ps -p $$)
+        shell: bash
