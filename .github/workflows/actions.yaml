@@ -1,7 +1,8 @@
 name: Actions Workfw
+
 on: [push]
 jobs:
-  run-gith-actions:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Actions
