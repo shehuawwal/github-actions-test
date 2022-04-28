@@ -1,6 +1,7 @@
 name: Actions Workfw
 
-on: [push]
+on:
+  - push
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
