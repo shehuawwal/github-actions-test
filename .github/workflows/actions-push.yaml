@@ -7,10 +7,18 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: check kernel version
+      - name: List Files Before Checkout
         run: |
-          uname -a
-          cat /etc/*release 
+          pwd
+          ls
+      - name: check out the repo.
+        uses: actions/checkout@v1
+    
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls
+
       - name: Simple JS Actions
         id: greet
         uses: actions/hello-world-javascript-action@v1
