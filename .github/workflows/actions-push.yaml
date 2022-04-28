@@ -2,13 +2,14 @@ name: Actions Workflow Push
 
 on:
   - push
+
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Actions
         id: greet
-        uses: hello-world-javascript-action@v1
+        uses: actions/hello-world-javascript-action@v1
         with:
           who-to-greet: 'Lutz'
 
