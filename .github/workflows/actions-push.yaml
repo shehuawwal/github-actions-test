@@ -10,7 +10,15 @@ jobs:
       - name: List Files Before Checkout
         run: |
           pwd
-          ls
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
+          
+          # git clone git@github:$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
+
       - name: check out the repo.
         uses: actions/checkout@v1
     
