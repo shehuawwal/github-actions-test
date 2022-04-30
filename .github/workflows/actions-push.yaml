@@ -11,11 +11,11 @@ jobs:
         run: |
           pwd
           ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
-          
+          echo "SHA" + $GITHUB_SHA
+          echo "REPO" + $GITHUB_REPOSITORY
+          echo "WORKSPACE" + $GITHUB_WORKSPACE
+          echo "GITHUB TOKEN" + "${{ github.token }}"
+
           # git clone git@github:$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA
 
