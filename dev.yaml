@@ -1,0 +1,30 @@
+name: NodeJS Application Build
+
+on:
+  repository_dispatch:
+    types: [build]
+  # push:
+  #    branches:
+  #      - dev
+
+jobs:
+  test:
+    name: Run test suite
+    runs-on: ubuntu-latest
+    container:
+      image: node
+
+    steps:
+    - name: Checkout NodeJS App
+      uses: actions/checkout@v2
+    
+    - name: Setup NodeJS On Worker Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18.0'
+    
+    - name: Install & Test
+      run: |
+        npm install
+        npm test
+
