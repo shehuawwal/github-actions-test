@@ -9,7 +9,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t shehuawwal/lutz-nodejs:latest .'
+//         sh 'docker build -t shehuawwal/lutz-nodejs:latest .'
+        sh 'docker build -t shehuawwal/lutz-nodejs:$BUILD_NUMBER .'
+
       }
     }
     stage('Login') {
